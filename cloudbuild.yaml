@@ -3,22 +3,22 @@
     args:
       - build
       - '-t'
-      - 'asia.gcr.io/bangalore-sandbox/weather-api:$COMMIT_SHA'
+      - 'asia.gcr.io/bangalore-sandbox/weather-api'
       - .
   - name: gcr.io/cloud-builders/docker
     args:
       - push
-      - 'asia.gcr.io/bangalore-sandbox/weather-api:$COMMIT_SHA'
+      - 'asia.gcr.io/bangalore-sandbox/weather-api'
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - run
       - deploy
       - weather-api
       - '--image'
-      - 'asia.gcr.io/bangalore-sandbox/weather-api:$COMMIT_SHA'
+      - 'asia.gcr.io/bangalore-sandbox/weather-api'
       - '--region'
       - 'asia-south1'     
     entrypoint: gcloud
 timeout: 1200s
 images:
-  - 'asia.gcr.io/bangalore-sandbox/weather-api:$COMMIT_SHA'
+  - 'asia.gcr.io/bangalore-sandbox/weather-api'

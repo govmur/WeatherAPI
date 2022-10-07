@@ -17,9 +17,7 @@
       - '--image'
       - 'asia.gcr.io/bangalore-sandbox/weather-api:$COMMIT_SHA'
       - '--region'
-      - 'asia-south1'
-      - '--platform'
-      - $_PLATFORM
+      - 'asia-south1'     
     entrypoint: gcloud
 timeout: 1200s
 images:
